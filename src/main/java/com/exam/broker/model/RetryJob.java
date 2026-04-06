@@ -35,4 +35,106 @@ public class RetryJob {
     private String lastError;
 
     private LocalDateTime createdAt = LocalDateTime.now();
+
+    // Explicitly added methods to resolve compilation errors
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getTopicType() {
+        return topicType;
+    }
+
+    public void setTopicType(String topicType) {
+        this.topicType = topicType;
+    }
+
+    public String getPayload() {
+        return payload;
+    }
+
+    public void setPayload(String payload) {
+        this.payload = payload;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStepAStatus() {
+        return stepAStatus;
+    }
+
+    public void setStepAStatus(String stepAStatus) {
+        this.stepAStatus = stepAStatus;
+    }
+
+    public String getStepBStatus() {
+        return stepBStatus;
+    }
+
+    public void setStepBStatus(String stepBStatus) {
+        this.stepBStatus = stepBStatus;
+    }
+
+    public String getStepCStatus() {
+        return stepCStatus;
+    }
+
+    public void setStepCStatus(String stepCStatus) {
+        this.stepCStatus = stepCStatus;
+    }
+
+    public String getStepDStatus() {
+        return stepDStatus;
+    }
+
+    public void setStepDStatus(String stepDStatus) {
+        this.stepDStatus = stepDStatus;
+    }
+
+    public int getRetryCount() {
+        return retryCount;
+    }
+
+    public void setRetryCount(int retryCount) {
+        this.retryCount = retryCount;
+    }
+
+    public int getMaxRetries() {
+        return maxRetries;
+    }
+
+    public void setMaxRetries(int maxRetries) {
+        this.maxRetries = maxRetries;
+    }
+
+    public LocalDateTime getNextRunAt() {
+        return nextRunAt;
+    }
+
+    public void setNextRunAt(LocalDateTime nextRunAt) {
+        this.nextRunAt = nextRunAt;
+    }
+
+    public String getLastError() {
+        return lastError;
+    }
+
+    public void setLastError(String lastError) {
+        this.lastError = lastError;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 }

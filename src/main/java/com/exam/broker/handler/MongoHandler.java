@@ -28,7 +28,10 @@ public class MongoHandler extends BaseHandler {
         System.out.println("[Step D] Creating final record in MongoDB for: " + job.getTopicType());
         
         java.util.Map<String, Object> fullPayload = objectMapper.readValue(job.getPayload(), java.util.Map.class);
-        java.util.Map<String, Object> document = (java.util.Map<String, Object>) fullPayload.get("data");
+        java.util.Map<String, Object> data = (java.util.Map<String, Object>) fullPayload.get("data");
+        
+        // Create a new map for the document to avoid circular references during serialization
+        java.util.Map<String, Object> document = new java.util.HashMap<>(data);
         document.put("originalJobId", job.getId().toString());
         document.put("trackingInfo", fullPayload);
         
