@@ -15,3 +15,6 @@ The core of the retry mechanism. It listens for failed jobs in Kafka and execute
 
 ## Port
 - Default: `8084`
+
+## Infrastructure Repo
+- [Main Infrastructure & Orchestration](https://github.com/UniModelo-Projects/Vacaciones_Microservices_Infrastructure)
