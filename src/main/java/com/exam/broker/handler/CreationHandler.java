@@ -38,14 +38,22 @@ public class CreationHandler extends BaseHandler {
 
         switch (job.getTopicType().toUpperCase()) {
             case "PRODUCTS":
-                productClient.retry(data);
+            case "PRODUCT":
+                com.exam.broker.model.Product product = objectMapper.convertValue(data, com.exam.broker.model.Product.class);
+                productClient.retry(product);
                 break;
             case "ORDERS":
-                orderClient.retry(data);
+            case "ORDER":
+                com.exam.broker.model.Order order = objectMapper.convertValue(data, com.exam.broker.model.Order.class);
+                orderClient.retry(order);
                 break;
             case "PAYMENTS":
-                paymentClient.retry(data);
+            case "PAYMENT":
+                com.exam.broker.model.Payment payment = objectMapper.convertValue(data, com.exam.broker.model.Payment.class);
+                paymentClient.retry(payment);
                 break;
+            default:
+                throw new IllegalArgumentException("Unknown TopicType: " + job.getTopicType());
         }
 
         job.setStepAStatus("SUCCESS");
